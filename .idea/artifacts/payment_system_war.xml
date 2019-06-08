@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="payment-system:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>payment-system</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="payment-system.war">
+      <element id="artifact" artifact-name="payment-system:war exploded" />
+    </root>
+  </artifact>
+</component>
