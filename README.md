@@ -18,7 +18,7 @@
 
 (4)CentOS Linux release 7.1.1503 
 
-# 2.部署合约
+# 2.部署节点
 
 (1) 启动geth
 ```
