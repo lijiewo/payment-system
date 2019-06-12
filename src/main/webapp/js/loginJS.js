@@ -21,7 +21,22 @@ function c_o_li_submit() {
             success: function(response) {
                 if (response === true) {
                     alert("登录成功");
-                    setTimeout('window.location.href="payment.html"');
+                    $.ajax({
+                        url: "isAdmin",
+                        type: "GET",
+                        success: function(response) {
+                            if(response === true) {
+                                setTimeout('window.location.href="admin.html"');
+                            }
+                            else{
+                                setTimeout('window.location.href="payment.html"');
+                            }
+                        },
+                        error: function(xhr, msg, e) {
+                            alert("error!");
+                        }
+                    });
+
 
                 } else {
                     alert("账号或密码错误");

@@ -111,6 +111,21 @@ function getUserName() {
     });
 }
 
+function getUserName() {
+    $.ajax({
+        url: "online",
+        type: "GET",
+        success: function(response) {
+            if(response!=null) {
+                $("#UserID").append(response.toString());
+            }
+        },
+        error: function(xhr, msg, e) {
+            alert("error!");
+        }
+    });
+}
+
 function getBalance() {
         $.ajax({
             url: "returnBalance",
@@ -155,6 +170,25 @@ function addMsg_submit() {
 
         });
     }
+}
+function isAdmin() {
+    $.ajax({
+        url: "isAdmin",
+        type: "GET",
+        success: function(response) {
+            if(response === true) {
+                //是管理员
+                //setTimeout('window.location.href="admin.html"');
+            }
+            else{
+                //是普通用户
+                //setTimeout('window.location.href="payment.html"');
+            }
+        },
+        error: function(xhr, msg, e) {
+            alert("error!");
+        }
+    });
 }
 
 function tomain() {

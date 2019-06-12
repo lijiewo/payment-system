@@ -58,6 +58,21 @@ public class UserController {
         else return "未登录";
     }
 
+
+    @RequestMapping("isAdmin")
+    @ResponseBody
+    public boolean isAdmin(HttpServletRequest request,HttpServletResponse response)throws Exception{
+        UserService userService = new UserService();
+        String username=request.getSession().getAttribute("user").toString();
+        BigInteger level=userService.returnLevel(username);
+        if(level.compareTo(new BigInteger("1"))==0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     @RequestMapping("logout")
     @ResponseBody
     public boolean logout(HttpServletRequest request,HttpServletResponse response){
