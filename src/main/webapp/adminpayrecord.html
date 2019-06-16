@@ -34,7 +34,6 @@
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="css/magnific-popup.css"> 
     <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/searchJS.js"></script>
 	<!-- Owl Carousel  -->
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -50,7 +49,7 @@
 	<![endif]-->
 
 	</head>
-	<body onload="searchUser()">
+	<body onload = "searchs()">
 		
 	<div class="gtco-loader"></div>
 	
@@ -86,7 +85,7 @@
 
 						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
 							<!-- <span class="intro-text-small">Don't be shy</span> -->
-							<h1>用户信息列表</h1>	
+							<h1>支付记录</h1>	
 						</div>
 						
 					</div>
@@ -96,48 +95,25 @@
 		</div>
 	</header>
 	
-	<!-- <div class="col-md-7 mt-text animate-box"> 
-		<li>
-				<h3>用户名</h3>	 
-		</li>
-		<li id="UserID">
-				<script type="text/javascript">
-					$(function() {
-						$.ajax({
-							url: "online",
-							type: "GET",
-							success: function(response) {
-								if(response!=null) {
-									$("#UserID").append(response.toString()
-										+ '<b class="caret"></b>');
-								}
-							},
-							error: function(xhr, msg, e) {
-								// alert("error!");
-							}
-						});
-					});
-				</script>
-		</li>
-	</div> -->
 	
-	<div class="gtco-section border-bottom">
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-12">
-						<div id="userPanel" class="panel panel-default" >
+	
+	<!--<div class="gtco-section border-bottom">-->
+		<!--<div class="gtco-container">-->
+			<!--<div class="row">-->
+				<!--<div class="col-md-12">-->
+						<div id="mainPanel" class="panel panel-default" hidden >
 								<div class="panel-heading">
 							
 								</div>
-								<table class="table" id="userTable">
-									<tr style="font-weight: bold"><td>用户名</td><td>余额</td></tr>
+								<table class="table" id="postTable">
+									<tr style="font-weight: bold"><td>付款方</td><td>收款方</td><td>交易金额</td><td>交易时间</td></tr>
 							
 								</table>
 							</div>
-				</div>
-			</div>
-		</div>
-	</div>
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
 	</div>
 
 	</div>
@@ -156,7 +132,6 @@
 	<script src="js/jquery.countTo.js"></script>
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/searchJS.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>

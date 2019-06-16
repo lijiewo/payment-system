@@ -17,7 +17,7 @@ function searchs(){
 
             $("#postTable").html("<tr style=\"font-weight: bold\"><td>付款方</td><td>收款方</td><td>交易金额</td><td>交易时间</td></tr>");
             $.each(response, function(i, item) {
-                alert("hello!");
+                // alert("hello!");
                 $("#postTable").append(
                     '<tr><td>'+item.Afford+'</td><td>'+item.Recv+'</td><td>'+item.Mon+'</td><td>'+item.Time+'</td></tr>');
             });
@@ -177,10 +177,12 @@ function isAdmin() {
         type: "GET",
         success: function(response) {
             if(response === true) {
+                $("#searchPanel").show();
                 //是管理员
                 //setTimeout('window.location.href="admin.html"');
             }
             else{
+                alert("您是普通用户，没有权限使用这个功能");
                 //是普通用户
                 //setTimeout('window.location.href="payment.html"');
             }
@@ -191,6 +193,3 @@ function isAdmin() {
     });
 }
 
-function tomain() {
-    setTimeout('window.location.href="main.html"');
-}
